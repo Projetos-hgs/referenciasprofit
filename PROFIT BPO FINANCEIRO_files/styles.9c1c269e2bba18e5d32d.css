@@ -1,0 +1,964 @@
+.tablewiget-total {
+    font-weight: bold;
+    background-color: #fafafa;
+}
+
+.tablewiget-total-fixed {
+    font-weight: bold;
+    background-color: #fafafa;
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tablewiget-total-fixed-dark {
+    font-weight: bold;
+    background-color: #242526;
+    color: #e4e6eb;
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Container da tabela para ocupar 100% da altura */
+.rb-table-host {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.rb-table-host .ant-table-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.rb-table-host .ant-table {
+    height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.rb-table-host .ant-table-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.rb-table-host .ant-table-header {
+    flex-shrink: 0;
+}
+
+.rb-table-host .ant-table-cell {
+    min-width: 100px;
+}
+
+.rb-table-host .ant-table-body {
+    flex: 1;
+    overflow: auto;
+}
+
+.rb-table-host .ant-table-summary {
+    flex-shrink: 0;
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== widgets.css ===== */
+
+.widget-container,
+.widget-content,
+.widget-card-content {
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .widget-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding-inline: 0;
+  }
+  .widget-scrollInner {
+    inline-size: max(var(--widget-min-w, 640px), 100%);
+  }
+}
+
+@media (min-width: 769px) {
+  .widget-scroll {
+    overflow: visible;
+  }
+  .widget-scrollInner {
+    inline-size: 100%;
+  }
+}
+
+
+/* Detalhes do "modo cartão" (mobile) */
+.rb-mobile-details {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  padding: 8px 12px;
+  background: #fafafa;
+  border-top: 1px solid #f0f0f0;
+}
+
+.rb-mobile-details__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.rb-mobile-details__title {
+  font-size: 12px;
+  color: #666;
+}
+
+.rb-mobile-details__value {
+  font-weight: 500;
+  text-align: right;
+  word-break: break-word;
+}
+
+/* Estilos específicos para o Fluxo de Caixa */
+.fluxo-caixa-entradas-row {
+  background-color: #f6ffed !important;
+  font-weight: bold;
+  border-top: 2px solid #52c41a !important;
+}
+
+.fluxo-caixa-entradas-row:hover {
+  background-color: #d9f7be !important;
+}
+
+.fluxo-caixa-saidas-row {
+  background-color: #fff2f0 !important;
+  font-weight: bold;
+  border-top: 2px solid #ff4d4f !important;
+}
+
+.fluxo-caixa-saidas-row:hover {
+  background-color: #ffccc7 !important;
+}
+
+.fluxo-caixa-resultado-row {
+  background-color: #e6f7ff !important;
+  font-weight: bold;
+  border-top: 2px solid #1890ff !important;
+}
+
+.fluxo-caixa-resultado-row:hover {
+  background-color: #bae7ff !important;
+}
+
+.fluxo-caixa-categoria-row {
+  background-color: #f0f8ff !important;
+  font-weight: bold;
+  border-left: 3px solid #1890ff !important;
+}
+
+.fluxo-caixa-categoria-row:hover {
+  background-color: #e6f7ff !important;
+}
+
+.fluxo-caixa-pessoa-row {
+  background-color: #fafafa !important;
+  border-left: 3px solid #722ed1 !important;
+}
+
+.fluxo-caixa-pessoa-row:hover {
+  background-color: #f5f5f5 !important;
+}
+
+.fluxo-caixa-dia-row {
+  background-color: #ffffff;
+  border-left: 3px solid #52c41a !important;
+}
+
+.fluxo-caixa-dia-row:hover {
+  background-color: #f5f5f5;
+}
+
+.fluxo-caixa-dia-row .ant-table-cell {
+  padding-left: 48px;
+}
+
+.fluxo-caixa-default-row {
+  background-color: #ffffff;
+}
+
+.fluxo-caixa-default-row:hover {
+  background-color: #f5f5f5;
+}
+
+.fluxo-caixa-dark-row,
+.table-widget-dark-row {
+  background-color: #242526;
+  color: #b0b3b8;
+}
+
+.fluxo-caixa-dark-row:hover,
+.table-widget-dark-row:hover {
+  background-color: #3a3b3c;
+}
+
+.fluxo-caixa-dark-row .ant-table-cell-fix-left,
+.fluxo-caixa-dark-row .ant-table-cell-fix-right,
+.table-widget-dark-row .ant-table-cell-fix-left,
+.table-widget-dark-row .ant-table-cell-fix-right {
+    background-color: #242526;
+}
+
+.fluxo-caixa-dark-row:hover .ant-table-cell-fix-left,
+.fluxo-caixa-dark-row:hover .ant-table-cell-fix-right,
+.table-widget-dark-row:hover .ant-table-cell-fix-left,
+.table-widget-dark-row:hover .ant-table-cell-fix-right {
+    background-color: #3a3b3c;
+}
+
+/* === Global Dark Mode Table Styles for Widgets === */
+.rb-table-dark .ant-table {
+    background-color: #242526;
+    color: #b0b3b8;
+}
+
+.rb-table-dark .ant-table-container {
+    background-color: #242526;
+}
+
+/* Header */
+.rb-table-dark .ant-table-thead > tr > th {
+    background-color: #18191a;
+    color: #e4e6eb;
+    border-bottom: 1px solid #3e4042;
+    border-right: 1px solid #3e4042;
+}
+
+/* Body Cells */
+.rb-table-dark .ant-table-tbody > tr > td {
+    border-bottom: 1px solid #3e4042;
+    border-right: 1px solid #3e4042;
+}
+
+/* Hover Rows */
+.rb-table-dark .ant-table-tbody > tr.ant-table-row:hover > td {
+    background-color: #3a3b3c !important;
+}
+
+/* Sticky Columns */
+.rb-table-dark .ant-table-cell-fix-left,
+.rb-table-dark .ant-table-cell-fix-right {
+    background-color: #242526;
+}
+
+.rb-table-dark .ant-table-row:hover .ant-table-cell-fix-left,
+.rb-table-dark .ant-table-row:hover .ant-table-cell-fix-right {
+    background-color: #3a3b3c !important;
+}
+
+/* Summary/Total Rows */
+.rb-table-dark .ant-table-summary {
+    background-color: #18191a;
+}
+
+.rb-table-dark .ant-table-summary > tr > td,
+.rb-table-dark .ant-table-summary > tr > th {
+    background-color: #18191a;
+    color: #e4e6eb;
+    border-bottom: 1px solid #3e4042;
+}
+
+/* Empty State */
+.rb-table-dark .ant-empty-description {
+    color: #b0b3b8;
+}
+
+
+/* Novos estilos para hierarquia por período */
+.ant-table-tbody > tr[class*="fluxo-caixa"] {
+  border-left: 3px solid transparent;
+}
+
+.ant-table-tbody > tr[class*="fluxo-caixa"]:has([data-level="1"]) {
+  border-left-color: #1890ff;
+}
+
+.ant-table-tbody > tr[class*="fluxo-caixa"]:has([data-level="2"]) {
+  border-left-color: #722ed1;
+}
+
+.ant-table-tbody > tr[class*="fluxo-caixa"]:has([data-level="3"]) {
+  border-left-color: #52c41a;
+}
+/* ===== TopHeader.css ===== */
+
+.topHeader {
+  /* default: público => sticky */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 64px;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+
+  padding: 0 12px;
+  border-bottom: 1px solid var(--border, #e8e8e8);
+  background: var(--white, #fff);
+
+  --logo-h: 40px;
+  --logo-w: 110px;
+}
+
+/* app interno => volta a ser FIXED e ocupa a janela toda */
+.topHeader--fixed {
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+
+.topHeader__left,
+.topHeader__right { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.topHeader__brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
+
+.topHeader__logoBox {
+  display: flex; align-items: center; justify-content: center;
+  inline-size: auto; max-inline-size: var(--logo-w, 120px);
+  block-size: var(--logo-h);
+  padding: 0; border-radius: 0; background: transparent;
+}
+
+.topHeader__logoBox--project { --logo-h: 36px; --logo-w: 120px; }
+
+.topHeader__logoBox img {
+  height: 100%; width: auto; max-width: 100%; object-fit: contain;
+}
+
+.topHeader__titles { display: flex; flex-direction: column; line-height: 1.1; min-width: 0; }
+.topHeader__title { font-weight: 600; color: var(--textPrimary,#1f1f1f); font-size: clamp(14px,1.8vw,16px); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.topHeader__subtitle { color: var(--textSecondary,#8c8c8c); font-size: clamp(11px,1.4vw,12px); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-inline-size: 420px; }
+
+.topHeader__divider { inline-size: 3px; block-size: 38px; border-radius: 4px; background: var(--border,#e8e8e8); }
+.topHeader__project { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.topHeader__right { gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+
+/* ---- Mobile ---- */
+@media (max-width: 768px) {
+  .topHeader { height: auto; padding: 8px 12px; grid-template-columns: 1fr auto; grid-auto-rows: minmax(40px,auto); row-gap: 8px; --logo-h: 32px; --logo-w: 90px; }
+  .topHeader__right { grid-column: 1/-1; justify-content: flex-start; }
+  .topHeader__subtitle { max-inline-size: 60vw; }
+}
+
+/* src\components\card\PeriodCard\PeriodCards.css */
+.period-cards-container {
+  display: flex !important;
+  gap: 24px;
+  margin-bottom: 24px;
+  flex-direction: row;
+}
+
+@media (max-width: 600px) {
+  .period-cards-container {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+}
+
+/* Report Builder Styles */
+.react-grid-item {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+  overflow: visible;
+  /* Permitir elementos externos como botões de ação */
+}
+
+.react-grid-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.react-grid-item.react-grid-placeholder {
+  background: #1890ff;
+  opacity: 0.2;
+  transition-duration: 100ms;
+  z-index: 2;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.react-grid-item>.react-resizable-handle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: 0;
+  right: 0;
+  cursor: se-resize;
+}
+
+.react-grid-item>.react-resizable-handle::after {
+  content: "";
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  width: 5px;
+  height: 5px;
+  border-right: 2px solid rgba(0, 0, 0, 0.4);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.4);
+}
+
+.react-resizable-hide>.react-resizable-handle {
+  display: none;
+}
+
+/* Widget styles */
+.widget-container {
+  min-width: 0 !important;
+  /* Evitar overflow de conteúdo */
+  min-height: 0 !important;
+  /* Evitar overflow de conteúdo */
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  /* Mudado para permitir botões externos */
+  position: relative;
+}
+
+.widget-header {
+  min-width: 0 !important;
+  /* Evitar overflow de conteúdo */
+  min-height: 0 !important;
+  /* Evitar overflow de conteúdo */
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.widget-card-header {
+  min-width: 0 !important;
+  /* Evitar overflow de conteúdo */
+  min-height: 0 !important;
+  /* Evitar overflow de conteúdo */
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.widget-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  color: #262626;
+}
+
+.widget-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.widget-content {
+  min-width: 0 !important;
+  /* Evitar overflow de conteúdo */
+  min-height: 0 !important;
+  /* Evitar overflow de conteúdo */
+  flex: 1;
+  padding: 16px;
+  overflow: auto;
+}
+
+.widget-card-content {
+  min-width: 0 !important;
+  /* Evitar overflow de conteúdo */
+  min-height: 0 !important;
+  /* Evitar overflow de conteúdo */
+  flex: 1;
+  padding: 1px;
+  display: flex;
+}
+
+/* Sidebar drag item */
+.drag-item {
+  padding: 12px;
+  background: #f5f5f5;
+  border-radius: 6px;
+  cursor: move;
+  transition: all 0.2s ease;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.drag-item:hover {
+  background: #e6e6e6;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.drag-item-icon {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.drag-item-label {
+  font-size: 14px;
+  color: #595959;
+}
+
+/* Empty state */
+.empty-canvas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #8c8c8c;
+}
+
+.empty-canvas-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+  opacity: 0.3;
+}
+
+.empty-canvas-text {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.empty-canvas-hint {
+  font-size: 14px;
+  color: #bfbfbf;
+}
+
+/* Config forms */
+.config-section {
+  margin-bottom: 24px;
+}
+
+.config-section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #262626;
+  margin-bottom: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .react-grid-item {
+    border-radius: 4px;
+  }
+
+  .widget-header {
+    padding: 8px 12px;
+  }
+
+  .widget-content {
+    padding: 12px;
+    overflow: auto;
+  }
+}
+
+.widget-selected {
+  border-radius: 12px;
+  /* sombra interna simulando a borda */
+  box-shadow: inset 0 0 0 4px var(--cor1);
+  animation: trocaSombra 2s ease-in-out infinite;
+}
+
+@keyframes trocaSombra {
+
+  0%,
+  100% {
+    box-shadow: inset 0 0 0 1px rgb(142, 142, 243);
+  }
+
+  50% {
+    box-shadow: inset 0 0 0 1px white;
+  }
+}
+
+
+/* Popup “banho de loja” */
+.d4c-map-popup {
+  width: 320px;
+  max-width: 85vw;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  color: #0d121e;
+}
+
+.d4c-map-popup__header {
+  padding: 10px 12px 8px 12px;
+  border-bottom: 1px solid rgba(13, 18, 30, 0.08);
+}
+
+.d4c-map-popup__title {
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 1.2;
+  margin-bottom: 6px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.d4c-map-popup__meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.d4c-map-popup__badge {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(13, 18, 30, 0.12);
+  background: rgba(13, 18, 30, 0.03);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.d4c-map-popup__body {
+  padding: 10px 12px;
+}
+
+.d4c-map-popup__row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  padding: 8px 8px;
+  border-radius: 10px;
+}
+
+.d4c-map-popup__row + .d4c-map-popup__row {
+  margin-top: 4px;
+}
+
+.d4c-map-popup__row.is-dominant {
+  background: rgba(22, 119, 255, 0.07);
+  outline: 1px solid rgba(22, 119, 255, 0.12);
+}
+
+.d4c-map-popup__rowLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.d4c-map-popup__swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.9);
+  flex: 0 0 auto;
+}
+
+.d4c-map-popup__name {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(13, 18, 30, 0.85);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.d4c-map-popup__rowRight {
+  display: grid;
+  justify-items: end;
+  gap: 4px;
+}
+
+.d4c-map-popup__value {
+  font-size: 12px;
+  font-weight: 800;
+  font-family: 'Montserrat', sans-serif;
+  color: rgba(13, 18, 30, 0.92);
+}
+
+.d4c-map-popup__bar {
+  width: 120px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(13, 18, 30, 0.06);
+  overflow: hidden;
+}
+
+.d4c-map-popup__bar i {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: rgba(13, 18, 30, 0.28);
+}
+
+.d4c-map-popup__section {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(13, 18, 30, 0.14);
+}
+
+.d4c-map-popup__sectionTitle {
+  font-size: 11px;
+  font-weight: 800;
+  color: rgba(13, 18, 30, 0.70);
+  margin-bottom: 6px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.d4c-map-popup__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.d4c-map-popup__chip {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(13, 18, 30, 0.05);
+  border: 1px solid rgba(13, 18, 30, 0.08);
+}
+
+.d4c-map-popup__footer {
+  padding: 8px 12px 10px 12px;
+  border-top: 1px solid rgba(13, 18, 30, 0.08);
+}
+
+.d4c-map-popup__hint {
+  font-size: 11px;
+  color: rgba(13, 18, 30, 0.62);
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Dá um tapa no container do popup do Azure Maps (visual premium) */
+.atlas-popup-content {
+  border-radius: 14px !important;
+  box-shadow: 0 18px 50px rgba(13, 18, 30, 0.18) !important;
+  border: 1px solid rgba(13, 18, 30, 0.10) !important;
+  overflow: hidden;
+  /* Evita hover loop: apenas o conteúdo do popup é non-interactive; o canvas do mapa permanece clicável */
+  pointer-events: none !important;
+}
+
+/* Garante que o container do mapa receba interação (não herda pointer-events:none) */
+.map-widget-interactive .atlas-map,
+.map-widget-interactive .atlas-canvas {
+  pointer-events: auto !important;
+}
+
+
+/* Popup “banho de loja” */
+.d4c-map-popup {
+  width: 320px;
+  max-width: 85vw;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  color: #0d121e;
+}
+
+.d4c-map-popup__header {
+  padding: 10px 12px 8px 12px;
+  border-bottom: 1px solid rgba(13, 18, 30, 0.08);
+}
+
+.d4c-map-popup__title {
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 1.2;
+  margin-bottom: 6px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.d4c-map-popup__meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.d4c-map-popup__badge {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(13, 18, 30, 0.12);
+  background: rgba(13, 18, 30, 0.03);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.d4c-map-popup__body {
+  padding: 10px 12px;
+}
+
+.d4c-map-popup__row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  padding: 8px 8px;
+  border-radius: 10px;
+}
+
+.d4c-map-popup__row + .d4c-map-popup__row {
+  margin-top: 4px;
+}
+
+.d4c-map-popup__row.is-dominant {
+  background: rgba(22, 119, 255, 0.07);
+  outline: 1px solid rgba(22, 119, 255, 0.12);
+}
+
+.d4c-map-popup__rowLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.d4c-map-popup__swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.9);
+  flex: 0 0 auto;
+}
+
+.d4c-map-popup__name {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(13, 18, 30, 0.85);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.d4c-map-popup__rowRight {
+  display: grid;
+  justify-items: end;
+  gap: 4px;
+}
+
+.d4c-map-popup__value {
+  font-size: 12px;
+  font-weight: 800;
+  font-family: 'Montserrat', sans-serif;
+  color: rgba(13, 18, 30, 0.92);
+}
+
+.d4c-map-popup__bar {
+  width: 120px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(13, 18, 30, 0.06);
+  overflow: hidden;
+}
+
+.d4c-map-popup__bar i {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: rgba(13, 18, 30, 0.28);
+}
+
+.d4c-map-popup__section {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(13, 18, 30, 0.14);
+}
+
+.d4c-map-popup__sectionTitle {
+  font-size: 11px;
+  font-weight: 800;
+  color: rgba(13, 18, 30, 0.70);
+  margin-bottom: 6px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.d4c-map-popup__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.d4c-map-popup__chip {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(13, 18, 30, 0.05);
+  border: 1px solid rgba(13, 18, 30, 0.08);
+}
+
+.d4c-map-popup__footer {
+  padding: 8px 12px 10px 12px;
+  border-top: 1px solid rgba(13, 18, 30, 0.08);
+}
+
+.d4c-map-popup__hint {
+  font-size: 11px;
+  color: rgba(13, 18, 30, 0.62);
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Dá um tapa no container do popup do Azure Maps (visual premium) */
+.atlas-popup-content {
+  border-radius: 14px !important;
+  box-shadow: 0 18px 50px rgba(13, 18, 30, 0.18) !important;
+  border: 1px solid rgba(13, 18, 30, 0.10) !important;
+  overflow: hidden;
+  /* Evita hover loop: apenas o conteúdo do popup é non-interactive; o canvas do mapa permanece clicável */
+  pointer-events: none !important;
+}
+
+/* Garante que o container do mapa receba interação (não herda pointer-events:none) */
+.map-widget-interactive .atlas-map,
+.map-widget-interactive .atlas-canvas {
+  pointer-events: auto !important;
+}
+.pageWrap {
+  min-height: 100vh;
+  background: var(--pageBg, #f5f5f5);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.pageContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+
+  padding: 12px 24px 24px;
+  overflow: auto;
+  min-height: 0;
+}
+
+/* padding 0  dos lados*/
+@media (max-width: 768px) {
+  .pageContent {
+    padding-inline: 0;
+    padding-top: 0;
+    padding-bottom: 16px;
+  }
+}
+
+/*margem uniforme para os cards*/
+.pageCard {
+  margin: 8px;
+}
+
+/*# sourceMappingURL=styles.9c1c269e2bba18e5d32d.css.map*/
