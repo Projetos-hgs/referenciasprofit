@@ -43,7 +43,11 @@ export default function Header({ userEmail }: { userEmail?: string }) {
     if (!selectedClient) return
     setSyncing(true)
     try {
-      await fetch(`/api/sync/${selectedClient.id}`, { method: 'POST' })
+      await fetch(`/api/sync/${selectedClient.platform}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ clientId: selectedClient.id }),
+      })
       refresh()
     } catch {
       // ignorar
