@@ -1,3 +1,4 @@
+// Header autenticado — BPO Financeiro
 'use client'
 
 import { useState, useRef, useEffect } from 'react'

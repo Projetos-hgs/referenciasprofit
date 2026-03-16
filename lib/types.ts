@@ -1,4 +1,4 @@
-// Tipos globais do sistema BPO Financeiro
+// Tipos globais — BPO Financeiro
 
 export type Platform = 'omie' | 'conta_azul' | 'nibo'
 export type UserRole = 'admin' | 'analyst' | 'viewer'

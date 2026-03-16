@@ -1,3 +1,4 @@
+// Client Context — BPO Financeiro
 'use client'
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react'

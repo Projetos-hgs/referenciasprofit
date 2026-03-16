@@ -1,3 +1,4 @@
+// Contas a Receber — BPO Financeiro
 'use client'
 
 import { useState, useCallback } from 'react'

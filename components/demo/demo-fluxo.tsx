@@ -1,3 +1,4 @@
+// Fluxo de Caixa — demo
 'use client'
 
 import { useState } from 'react'

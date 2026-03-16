@@ -1,3 +1,4 @@
+// Contas a Receber — demo
 'use client'
 
 import { useState } from 'react'

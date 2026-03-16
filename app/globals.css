@@ -9,7 +9,7 @@
     --surface: 240 8% 8%;
     --surface-2: 240 6% 13%;
     --border: 240 5% 18%;
-    --primary: 280 65% 35%;
+    --primary: 262 80% 58%;
     --primary-foreground: 0 0% 100%;
     --muted: 240 5% 40%;
     --muted-foreground: 240 5% 60%;
@@ -21,7 +21,7 @@
   }
 
   * {
-    @apply border-border;
+    @apply border-border box-sizing-border;
     box-sizing: border-box;
   }
 
@@ -34,28 +34,8 @@
     @apply bg-background text-foreground font-sans;
   }
 
-  /* Scrollbar customizada */
-  ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-  }
-  ::-webkit-scrollbar-track {
-    background: hsl(var(--surface));
-  }
-  ::-webkit-scrollbar-thumb {
-    background: hsl(var(--border));
-    border-radius: 3px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--muted));
-  }
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-  .text-pretty {
-    text-wrap: pretty;
-  }
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { background: hsl(var(--surface)); }
+  ::-webkit-scrollbar-thumb { background: hsl(var(--border)); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: hsl(var(--muted)); }
 }

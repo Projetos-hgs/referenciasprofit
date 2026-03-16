@@ -1,3 +1,4 @@
+// Dashboard — BPO Financeiro
 'use client'
 
 import { useClientContext } from '@/lib/client-context'

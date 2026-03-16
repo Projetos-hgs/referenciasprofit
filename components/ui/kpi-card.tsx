@@ -1,3 +1,4 @@
+// KPI Card — componente de métricas
 import { cn } from '@/lib/utils'
 import { TrendingUp, TrendingDown, Minus } from 'lucide-react'
 

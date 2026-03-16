@@ -1,3 +1,4 @@
+// Empty State — componente genérico
 import { cn } from '@/lib/utils'
 
 interface EmptyStateProps {

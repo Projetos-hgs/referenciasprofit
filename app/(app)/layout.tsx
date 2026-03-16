@@ -1,3 +1,4 @@
+// Layout autenticado — BPO Financeiro
 import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import { ClientProvider } from '@/lib/client-context'

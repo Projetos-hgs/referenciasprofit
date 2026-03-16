@@ -3,7 +3,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { ChevronDown, User, Building2, RefreshCw } from 'lucide-react'
 import { cn, getPlatformLabel, getPlatformColor } from '@/lib/utils'
-
 const DEMO_CLIENTS = [
   { id: '1', name: 'Empresa Alpha Ltda', platform: 'omie', color: '#0055FF', cnpj: '12.345.678/0001-99' },
   { id: '2', name: 'Beta Comércio S.A.', platform: 'conta_azul', color: '#00B1CC', cnpj: '98.765.432/0001-11' },

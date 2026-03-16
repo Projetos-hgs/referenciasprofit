@@ -1,3 +1,4 @@
+// Página de demonstração — sem autenticação necessária
 'use client'
 
 import { useState } from 'react'

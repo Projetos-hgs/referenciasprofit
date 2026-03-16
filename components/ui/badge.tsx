@@ -1,5 +1,4 @@
 import { cn } from '@/lib/utils'
-import { getStatusBg, getStatusLabel } from '@/lib/utils'
 
 interface BadgeProps {
   children: React.ReactNode
@@ -31,9 +30,16 @@ export function Badge({ children, variant = 'default', className }: BadgeProps) 
 }
 
 export function StatusBadge({ status }: { status: string }) {
+  const map: Record<string, { label: string; cls: string }> = {
+    open:      { label: 'Em Aberto', cls: 'bg-info/10 text-info' },
+    paid:      { label: 'Pago',      cls: 'bg-success/10 text-success' },
+    overdue:   { label: 'Vencido',   cls: 'bg-danger/10 text-danger' },
+    cancelled: { label: 'Cancelado', cls: 'bg-muted/20 text-muted-foreground' },
+  }
+  const s = map[status] ?? { label: status, cls: 'bg-muted/20 text-muted-foreground' }
   return (
-    <span className={cn('inline-flex items-center px-2 py-0.5 rounded text-xs font-medium', getStatusBg(status))}>
-      {getStatusLabel(status)}
+    <span className={cn('inline-flex items-center px-2 py-0.5 rounded text-xs font-medium', s.cls)}>
+      {s.label}
     </span>
   )
 }

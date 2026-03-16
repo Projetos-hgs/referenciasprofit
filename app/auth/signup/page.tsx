@@ -1,3 +1,4 @@
+// Signup — BPO Financeiro
 'use client'
 
 import { useState } from 'react'

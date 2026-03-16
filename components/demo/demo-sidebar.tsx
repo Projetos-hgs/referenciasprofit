@@ -1,3 +1,4 @@
+// Sidebar — demo
 'use client'
 
 import { useState } from 'react'
